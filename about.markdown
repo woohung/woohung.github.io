@@ -3,16 +3,19 @@ layout: page
 title: About
 permalink: /about/
 ---
+## Кто я
+Меня зовут Артём. Сетевой инженер. 
+Раньше был инженером-конструктором, потом перешел в IT и увлекся сетями.
+Пока готовился к CCNA, увлекся идеей автоматизации. Блог создан в порыве поделиться своими изысканиями с теми, кто еще встанет на этот путь и будет задавать себе (скорей всего) похожие вопросы, с которыми столкнулся я.
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](https://jekyllrb.com/)
+## Со мной можно связаться:
+По любым вопросам, пока не прикрутил комментарии к блогу, смело обращайтесь по ссылкам ниже, с удовольствием отвечу.
+в Telegram: @woo_hung
+Ссылки на твиттер и github внизу страницы.
 
-You can find the source code for Minima at GitHub:
-[jekyll][jekyll-organization] /
-[minima](https://github.com/jekyll/minima)
-
-You can find the source code for Jekyll at GitHub:
-[jekyll][jekyll-organization] /
-[jekyll](https://github.com/jekyll/jekyll)
+## Где проявляю активность
+Пишу статьи на [хабре][https://habr.com/ru/users/woo_hung/]. Комментарии приветствуются.
 
 
-[jekyll-organization]: https://github.com/jekyll
+
+Блог создан на базе [Github Pages][https://pages.github.com] и собран на Jekyll [jekyll][jekyll-organization] / [jekyll](https://github.com/jekyll/jekyll)
