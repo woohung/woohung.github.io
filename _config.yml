@@ -21,7 +21,6 @@
 title: NetAutomation Area
 email: kovalchukaig@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
-  Блог про сети, автоматизацию и карьеру в сфере сетевых технологий.
   Материалы данного блога свободно распространяемы по лицензии CC BY-NC 3.0, 
   при копировании, пожалуйста, укажите первоисточник, буду Вам благодарен.
 baseurl: "" # the subpath of your site, e.g. /blog
