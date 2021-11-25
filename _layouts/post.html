@@ -14,7 +14,7 @@ layout: default
         {% endif %}
         {% for category in categories %}
         
-        Tags: <a href="{{site.baseurl}}/categories/#{{category|slugize}}">{{category}}</a>
+        Categories: <a href="{{site.baseurl}}/categories/#{{category|slugize}}">{{category}}</a>
         {% unless forloop.last %}&nbsp;{% endunless %}
         {% endfor %}
       </div>
