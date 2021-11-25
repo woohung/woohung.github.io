@@ -13,8 +13,8 @@ layout: default
           {% assign categories = page.categories %}
         {% endif %}
         {% for category in categories %}
-        <h2 class="post-categories-title">{{ page.list_title | default: "" }}</h2>
-        <a href="{{site.baseurl}}/categories/#{{category|slugize}}">{{category}}</a>
+        
+        Tags: <a href="{{site.baseurl}}/categories/#{{category|slugize}}">{{category}}</a>
         {% unless forloop.last %}&nbsp;{% endunless %}
         {% endfor %}
       </div>
