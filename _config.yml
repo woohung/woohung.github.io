@@ -38,7 +38,7 @@ header_pages:
   - about.md
   - certificates.md
   - archive.md
-  - categories.html
+  - categories.md
 
 disqus:
     shortname: woohung
