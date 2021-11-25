@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Tags
+title: Categories
 permalink: /categories/
 ---
 <div id="archives">
