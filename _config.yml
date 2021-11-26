@@ -36,10 +36,11 @@ plugins:
 
 
 header_pages:
-  - about.md
   - certificates.md
-  - archive.md
   - categories.md
+  - archive.md
+  - about.md
+  
 
 disqus:
     shortname: woohung
