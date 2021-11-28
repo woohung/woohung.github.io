@@ -21,7 +21,7 @@ layout: default
             {{ post.title | escape }}
           </a>
         </h3>
-        {{ post.content | strip_html | truncatewords:75}}<br>
+        {{ post.content | strip_html | truncatewords:50}}<br>
             <a href="{{ post.url }}">Read more...</a><br><br>
         {%- if site.show_excerpts -%}
           {{ post.excerpt }}
