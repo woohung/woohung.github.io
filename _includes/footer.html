@@ -17,6 +17,7 @@
             </li>
             {%- if site.email -%}
             <li><a class="u-email" href="mailto:{{ site.email }}">{{ site.email }}</a></li>
+            <li><p class="rss-subscribe"> Подписка <a href="{{ "/feed.xml" | relative_url }}"> на RSS</a></p></li>
             {%- endif -%}
         </ul>
       </div>
