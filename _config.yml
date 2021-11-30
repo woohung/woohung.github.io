@@ -33,6 +33,7 @@ plugins:
   - jekyll-feed
   - jekyll-sitemap
 
+show_excerpts: true
 
 header_pages:
   - certificates.md
