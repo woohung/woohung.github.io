@@ -18,7 +18,6 @@
             {%- if site.email -%}
             <li><a class="u-email" href="mailto:{{ site.email }}">{{ site.email }}</a></li>
             <li><p class="rss-subscribe"> Подписка <a href="{{ "/feed.xml" | relative_url }}"> на RSS</a></p></li>
-            <li><p class="rss-subscribe"> Подписка на <a href="{{ "/subscribe.md" | relative_url }}"> email-рассылку</a></p></li>
             <li><p class="rss-subscribe"> Копируй и не забудь ссылку на источник. Спасибо. <a href="{{ "https://opensource.org/licenses/MIT" | absolute_url }}"> Лицензия MIT </a></p></li>
             {%- endif -%}
         </ul>
