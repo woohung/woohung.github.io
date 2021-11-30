@@ -43,6 +43,8 @@ header_pages:
 
 disqus:
     shortname: woohung
+google_analytics: G-CN4DKMSDY2
+
 
 # Exclude from processing.
 # The following items will not be processed, by default.
