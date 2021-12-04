@@ -34,7 +34,7 @@ layout: default
     {{ content }}
   </div>
 
-  {%- if site.comments -%}
+  {%- if site.params.comments -%}
     {%- include comments.html -%}
   {%- endif -%}
 
