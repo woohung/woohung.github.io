@@ -33,9 +33,10 @@ layout: default
   <div class="post-content e-content" itemprop="articleBody">
     {{ content }}
   </div>
-  <div class="telegram-comment">
-    <script async src="https://comments.app/js/widget.js?3" data-comments-app-website="tbZaj70o" data-limit="5"></script>
-  </div>
+
+{% if site.telegram_site_id %}
+    {% include telegram.html %}
+{% endif %}
 
 
   <a class="u-url" href="{{ page.url | relative_url }}" hidden></a>
