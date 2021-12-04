@@ -33,6 +33,8 @@ layout: default
   <div class="post-content e-content" itemprop="articleBody">
     {{ content }}
   </div>
-
+  {%- if site.params.shortname -%}
+    {%- include comments.html -%}
+  {%- endif -%}
   <a class="u-url" href="{{ page.url | relative_url }}" hidden></a>
 </article>
