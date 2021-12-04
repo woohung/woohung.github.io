@@ -42,9 +42,9 @@ header_pages:
   - archive.md
   - about.md
 
-staticman:
-  staticman_url: https://netautomation-blog.herokuapp.com/v2/entry/woohung/woohung.github.io/main/comments
-  comments: true
+
+staticman_url: https://netautomation-blog.herokuapp.com/v2/entry/woohung/woohung.github.io/main/comments
+comments: true
 
 google_analytics: G-CN4DKMSDY2
 
