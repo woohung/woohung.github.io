@@ -15,7 +15,7 @@
         contentType: 'application/x-www-form-urlencoded',
         success: function (data) {
   //        showModal('Comment submitted', 'Thanks! Refresh your browser in a minute to see your comment.');
-          showModal('Comment submitted', 'Thanks! Your comment is <a href="https://github.com/willymcallister/willymcallister.github.io/pulls">pending</a>. It will appear when approved.');
+          showModal('Comment submitted', 'Thanks! Your comment is <a href="https://github.com/woohung/woohung.github.io/pulls">pending</a>. It will appear when approved.');
           $(form).removeClass('form--loading');
         },
         error: function (err) {
