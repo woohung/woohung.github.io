@@ -44,11 +44,13 @@ header_pages:
 
 staticman:
   api: https://netautomation-blog.herokuapp.com/v2/entry/woohung/woohung.github.io/main/comments
-  comments: true
   recaptcha:
     enabled: true
     sitekey: '6Lfil3odAAAAAHraZ72yIgCKVTeGjBdAlQj-D2Lm'
     secret: 'hvz4hM252hYAVJnSke8eecpYX4zWN5Z+u5Z6iWyb4qKwaQQOi9l/zZgA6QPOW3GaWTgYv6gPbWiYvqCgRqykPDYPmmmR+cjDW1byt+rzZijmEAz1LJlmVocCozthluGRl9mBW3H2SVgTOgIOs6q8wR22P8Q4GMNXxwST4F+Y4QCySOhnPd4sVee4i9ntP/vaZr12nSdlcumgRz0s3SaKY/gKAZqy84ZXHKlEWaHLCy7/wQ1OdczSDEOaJsMiwcWXOGYUCBXfEnjMvsbjFASOifo2uYqMD4lzI6MdMxbberEoLh/71Hc3wCl2530H0mnxMDBSC4ihnqnHbPQW4Ij5db3XtIOOUaU/73l8bFsKpAmBWLZIfjQQqYdkXFcBSHIvy97uY8i2SPSutOx2/BKrgXxIYmHkI/5HDhOm1WPndbx/R/eYsWWau5FtfKVBQQDDwJc7GLDS3Fyelff8Llut9yM3THho9vXlsPm3JC4H1KrHkf7jluLEZI0tCSIjvS0AxYxV8kKIb+cnoYF1oR4q8l0c+bu8od9fFAbmlNJcTju7cmEF9W63XaJLAHZpb27oP6SEmNr1dQSm5dkg9jWnIE5mkjqAGmTuIfOwbfualT+GHewTZ0E3fi2EN6iIBcA6q3we34Oyf459qrquTjMW30JvYAMWtbo8qWZZM6a0ILs='
+  comments: true
+
+
 
 google_analytics: G-CN4DKMSDY2
 
