@@ -1,90 +1,22 @@
-# Name of the property. You can have multiple properties with completely
-# different config blocks for different sections of your site.
-# For example, you can have one property to handle comment submission and
-# another one to handle posts.
 comments:
-  # (*) REQUIRED
-  #
-  # Names of the fields the form is allowed to submit. If a field that is
-  # not here is part of the request, an error will be thrown.
-  allowedFields: ["name", "email", "url", "message", "replying_to"]
-
-  # (*) REQUIRED WHEN USING NOTIFICATIONS
-  #
-  # When allowedOrigins is defined, only requests sent from one of the domains
-  # listed will be accepted. The origin is sent as part of the `options` object
-  # (e.g. <input name="options[origin]" value="http://yourdomain.com/post1")
-  allowedOrigins: ["woohung.github.io"]
-
-  # (*) REQUIRED
-  #
-  # Name of the branch being used. Must match the one sent in the URL of the
-  # request.
-  branch: "main"
-
-  # (*) REQUIRED
-  #
-  # Destination path (filename) for the data files. Accepts placeholders.
-  filename: "comment-{@timestamp}"
-
-  # The format of the generated data files. Accepted values are "json", "yaml"
-  # or "frontmatter"
-  format: "yaml"
-
-  # List of fields to be populated automatically by Staticman and included in
-  # the data file. Keys are the name of the field. The value can be an object
-  # with a `type` property, which configures the generated field, or any value
-  # to be used directly (e.g. a string, number or array)
+  allowedFields: ["name", "email", "message", "thread", "parentName", "parent"]
+  branch            : "main"
+  commitMessage     : "New comment from {fields.name} on {options.slug}"
+  path: "data/comments/{options.slug}"
+  filename          : "comment-{@timestamp}"
+  format            : "yaml"
+  moderation        : true
+  requiredFields    : ["name", "email", "message"]
+  pullRequestBody   : "Dear human,\n\nHere's a new entry for your approval. :tada:\n\nMerge the pull request to accept it, or close it to send it away.\n\n:heart: Your friends [Staticman](https://staticman.net) && [@xbreaker](https://aybe.org) :muscle:\n\n---\n"
+  transforms:
+    email           : md5
   generatedFields:
     date:
-      type: date
+      type          : "date"
       options:
-        format: "iso8601"
-#        format: "timestamp-seconds"
-
-  # Whether entries need to be appproved before they are published to the main
-  # branch. If set to `true`, a pull request will be created for your approval.
-  # Otherwise, entries will be published to the main branch automatically.
-  moderation: true
-
-  # Name of the site. Used in notification emails.
-  #name: "eduardoboucas.com"
-  name: "woohung.github.io"
-
-  # Notification settings. When enabled, users can choose to receive notifications
-  # via email when someone adds a reply or a new comment. This requires an account
-  # with Mailgun, which you can get for free at http://mailgun.com.
-  notifications:
-    # Enable notifications
-    enabled: false
-
-    # (!) ENCRYPTED
-    # Mailgun API key
-    #apiKey: "hvz4hM252hYAVJnSke8eecpYX4zWN5Z+u5Z6iWyb4qKwaQQOi9l/zZgA6QPOW3GaWTgYv6gPbWiYvqCgRqykPDYPmmmR+cjDW1byt+rzZijmEAz1LJlmVocCozthluGRl9mBW3H2SVgTOgIOs6q8wR22P8Q4GMNXxwST4F+Y4QCySOhnPd4sVee4i9ntP/vaZr12nSdlcumgRz0s3SaKY/gKAZqy84ZXHKlEWaHLCy7/wQ1OdczSDEOaJsMiwcWXOGYUCBXfEnjMvsbjFASOifo2uYqMD4lzI6MdMxbberEoLh/71Hc3wCl2530H0mnxMDBSC4ihnqnHbPQW4Ij5db3XtIOOUaU/73l8bFsKpAmBWLZIfjQQqYdkXFcBSHIvy97uY8i2SPSutOx2/BKrgXxIYmHkI/5HDhOm1WPndbx/R/eYsWWau5FtfKVBQQDDwJc7GLDS3Fyelff8Llut9yM3THho9vXlsPm3JC4H1KrHkf7jluLEZI0tCSIjvS0AxYxV8kKIb+cnoYF1oR4q8l0c+bu8od9fFAbmlNJcTju7cmEF9W63XaJLAHZpb27oP6SEmNr1dQSm5dkg9jWnIE5mkjqAGmTuIfOwbfualT+GHewTZ0E3fi2EN6iIBcA6q3we34Oyf459qrquTjMW30JvYAMWtbo8qWZZM6a0ILs="
-"
-
-    # (!) ENCRYPTED
-    # Mailgun domain (encrypted)
-    # domain: "cfDHHwwF7f4lCTzvPkPfmebKMESn9Z0X0X4G5y2COM44tAbcDTw4DIK3DGE+Pviy1tdMBKis0m7bjQYcMlXcMRr++wIX4qhurvPghi/jNo0NtiLDR1w9/NAxCBLmbgSEQpWUMeOI3KNtL5dQbqDVheOIbsPi3DTCddpIJrY2Rkc="
-
-    # fromAddress: "yozeff64@gmail.com"
-
-  # (*) REQUIRED
-  #
-  # Destination path (directory) for the data files. Accepts placeholders.
-  path: "_data/comments/{options.slug}"
-
-  # Names of required files. If any of these isn't in the request or is empty,
-  # an error will be thrown.
-  requiredFields: ["name", "message"]
-
-  # List of transformations to apply to any of the fields supplied. Keys are
-  # the name of the field and values are possible transformation types.
-  transforms:
-    email: md5
-
-recaptcha:
-  enabled: true
-  sitekey: '6Lfil3odAAAAAHraZ72yIgCKVTeGjBdAlQj-D2Lm'
-  secret: 'hvz4hM252hYAVJnSke8eecpYX4zWN5Z+u5Z6iWyb4qKwaQQOi9l/zZgA6QPOW3GaWTgYv6gPbWiYvqCgRqykPDYPmmmR+cjDW1byt+rzZijmEAz1LJlmVocCozthluGRl9mBW3H2SVgTOgIOs6q8wR22P8Q4GMNXxwST4F+Y4QCySOhnPd4sVee4i9ntP/vaZr12nSdlcumgRz0s3SaKY/gKAZqy84ZXHKlEWaHLCy7/wQ1OdczSDEOaJsMiwcWXOGYUCBXfEnjMvsbjFASOifo2uYqMD4lzI6MdMxbberEoLh/71Hc3wCl2530H0mnxMDBSC4ihnqnHbPQW4Ij5db3XtIOOUaU/73l8bFsKpAmBWLZIfjQQqYdkXFcBSHIvy97uY8i2SPSutOx2/BKrgXxIYmHkI/5HDhOm1WPndbx/R/eYsWWau5FtfKVBQQDDwJc7GLDS3Fyelff8Llut9yM3THho9vXlsPm3JC4H1KrHkf7jluLEZI0tCSIjvS0AxYxV8kKIb+cnoYF1oR4q8l0c+bu8od9fFAbmlNJcTju7cmEF9W63XaJLAHZpb27oP6SEmNr1dQSm5dkg9jWnIE5mkjqAGmTuIfOwbfualT+GHewTZ0E3fi2EN6iIBcA6q3we34Oyf459qrquTjMW30JvYAMWtbo8qWZZM6a0ILs='
+        format      : "timestamp-seconds"
+  recaptcha:
+    enabled: true
+    sitekey: '6Lfil3odAAAAAHraZ72yIgCKVTeGjBdAlQj-D2Lm'
+    secret: 'hvz4hM252hYAVJnSke8eecpYX4zWN5Z+u5Z6iWyb4qKwaQQOi9l/zZgA6QPOW3GaWTgYv6gPbWiYvqCgRqykPDYPmmmR+cjDW1byt+rzZijmEAz1LJlmVocCozthluGRl9mBW3H2SVgTOgIOs6q8wR22P8Q4GMNXxwST4F+Y4QCySOhnPd4sVee4i9ntP/vaZr12nSdlcumgRz0s3SaKY/gKAZqy84ZXHKlEWaHLCy7/wQ1OdczSDEOaJsMiwcWXOGYUCBXfEnjMvsbjFASOifo2uYqMD4lzI6MdMxbberEoLh/71Hc3wCl2530H0mnxMDBSC4ihnqnHbPQW4Ij5db3XtIOOUaU/73l8bFsKpAmBWLZIfjQQqYdkXFcBSHIvy97uY8i2SPSutOx2/BKrgXxIYmHkI/5HDhOm1WPndbx/R/eYsWWau5FtfKVBQQDDwJc7GLDS3Fyelff8Llut9yM3THho9vXlsPm3JC4H1KrHkf7jluLEZI0tCSIjvS0AxYxV8kKIb+cnoYF1oR4q8l0c+bu8od9fFAbmlNJcTju7cmEF9W63XaJLAHZpb27oP6SEmNr1dQSm5dkg9jWnIE5mkjqAGmTuIfOwbfualT+GHewTZ0E3fi2EN6iIBcA6q3we34Oyf459qrquTjMW30JvYAMWtbo8qWZZM6a0ILs='
 
