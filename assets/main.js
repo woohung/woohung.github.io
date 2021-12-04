@@ -1,85 +1,140 @@
-document.addEventListener(
-    "click",
-    function(event) {
-        const target = event.target,
-            I = function(id) {
-                return document.getElementById(id);
-            },
-            C = function(cl) {
-                return document.getElementsByClassName(cl)[0];
-            };
-        if (target.matches("[data-toggle='reply-form']")) {
-            var cancel = I("cancel-button"),
-                comment = target.parentNode.parentNode,
-                author = comment.getAttribute("data-name");
-            target.parentNode.appendChild(I("reply-form"));
-            target.classList.toggle("d-none");
-            I("input-thread").value = comment.getAttribute("data-thread");
-            I("input-parent").value = comment.getAttribute("data-id");
-            I("input-parentName").value = author;
-            I("reply-form-head").innerHTML = "Ваш ответ " + author;
-
-            if(cancel.classList.contains("d-none"))
-              cancel.classList.toggle("d-none");
+// Static comments
+// from: https://github.com/eduardoboucas/popcorn/blob/gh-pages/js/main.js 
+(function ($) {
+    var $comments = $('.js-comments');
+  
+    $('.js-form').submit(function () {
+      var form = this;
+  
+      $(form).addClass('form--loading');
+  
+      $.ajax({
+        type: $(this).attr('method'),
+        url:  $(this).attr('action'),
+        data: $(this).serialize(),
+        contentType: 'application/x-www-form-urlencoded',
+        success: function (data) {
+  //        showModal('Comment submitted', 'Thanks! Refresh your browser in a minute to see your comment.');
+          showModal('Comment submitted', 'Thanks! Your comment is <a href="https://github.com/willymcallister/willymcallister.github.io/pulls">pending</a>. It will appear when approved.');
+          $(form).removeClass('form--loading');
+        },
+        error: function (err) {
+          console.log(err);
+          showModal('Error', 'Sorry, there was an error when your comment was submitted!');
+          $(form).removeClass('form--loading');
         }
-        if (target.matches("[data-toggle='reply-form-cancel']")) {
-            I("reply-form-head").innerHTML = "Добавить комментарий";
-            C("d-none").classList.toggle("d-none");
-            I("cancel-button").classList.toggle("d-none");
-            I("comment-thread").appendChild(I("reply-form"));
-        }
-    },
-    false
-);
-
-const form = document.querySelector("#reply-form");
-form.addEventListener("submit", submitEvent => {
-  submitEvent.preventDefault();
-
-  const notice = document.getElementById("notice");
-  const fd = new FormData(form);  
-  const xhr = new XMLHttpRequest();
-
-  const json = {}
-  fd.forEach(function(value, prop){
-    json[prop] = value
-  })
-
-  // convert json to urlencoded query string
-  // SOURCE: https://stackoverflow.com/a/37562814 (comments)
-  const formBody = Object.keys(json).map(key => encodeURIComponent(key) + '=' + encodeURIComponent(json[key])).join('&')
-
-  submitEvent.submitter.setAttribute("disabled", "disabled");
-  form.classList.toggle("loading");
-  notice.innerHTML = "Комментарий отправляется";
-  notice.classList.add("sending");
-  xhr.open("POST", form.action);
-  xhr.onreadystatechange = function (event) {
-      if (xhr.readyState == 4) {
-          if(xhr.status == 200) {
-              form.classList.toggle("loading");
-              notice.innerHTML = "Комментарий отправлен успешно";
-              notice.classList.remove("error");
-              notice.classList.remove("sending");
-              notice.classList.add("success");
-              submitEvent.submitter.removeAttribute("disabled");
-              form.reset();
-          } else {
-              let response = JSON.parse(xhr.responseText)
-              form.classList.toggle("loading"); 
-              if(response && response.errorCode === 'RECAPTCHA_INVALID_INPUT_RESPONSE') {
-                  notice.innerHTML = "Ошибка отправки комментария (reCaptcha не пройдена)";
-              } else {
-                  notice.innerHTML = "Ошибка отправки комментария";
-              }
-              notice.classList.remove("success");
-              notice.classList.remove("sending");
-              notice.classList.add("error");
-              submitEvent.submitter.removeAttribute("disabled");
-          }
+      });
+      return false;
+    });
+  
+    $('.js-close-modal').click(function () {
+      $('body').removeClass('show-modal');
+    });
+  
+    function showModal(title, message) {
+      $('.js-modal-title').text(title);
+      $('.js-modal-text').html(message);
+      $('body').addClass('show-modal');
+    }
+  })(jQuery);
+  
+  // Staticman comment replies, from https://github.com/mmistakes/made-mistakes-jekyll
+  // modified from Wordpress https://core.svn.wordpress.org/trunk/wp-includes/js/comment-reply.js
+  // Released under the GNU General Public License - https://wordpress.org/about/gpl/
+  // addComment.moveForm is called from comment.html when the reply link is clicked.
+  var addComment = {
+    moveForm: function( commId, parentId, respondId, postId ) {
+      var div, element, style, cssHidden,
+      t           = this,                    //t is the addComment object, with functions moveForm and I, and variable respondId
+      comm        = t.I( commId ),                                //whole comment
+      respond     = t.I( respondId ),                             //whole new comment form
+      cancel      = t.I( 'cancel-comment-reply-link' ),           //whole reply cancel link
+      parent      = t.I( 'comment-replying-to' ),                 //a hidden element in the comment
+      post        = t.I( 'comment-post-slug' ),                   //null
+      commentForm = respond.getElementsByTagName( 'form' )[0];    //the <form> part of the comment_form div
+  
+      if ( ! comm || ! respond || ! cancel || ! parent || ! commentForm ) {
+        return;
       }
+  
+      t.respondId = respondId;
+      postId = postId || false;
+  
+      if ( ! t.I( 'sm-temp-form-div' ) ) {
+        div = document.createElement( 'div' );
+        div.id = 'sm-temp-form-div';
+        div.style.display = 'none';
+        respond.parentNode.insertBefore( div, respond ); //create and insert a bookmark div right before comment form
+      }
+  
+      comm.parentNode.insertBefore( respond, comm.nextSibling );  //move the form from the bottom to above the next sibling
+      if ( post && postId ) {
+        post.value = postId;
+      }
+      parent.value = parentId;
+      cancel.style.display = '';                        //make the cancel link visible
+  
+      cancel.onclick = function() {
+        var t       = addComment,
+        temp    = t.I( 'sm-temp-form-div' ),            //temp is the original bookmark
+        respond = t.I( t.respondId );                   //respond is the comment form
+  
+        if ( ! temp || ! respond ) {
+          return;
+        }
+  
+        t.I( 'comment-replying-to' ).value = null;      //forget the name of the comment
+        temp.parentNode.insertBefore( respond, temp );  //move the comment form to its original location
+        temp.parentNode.removeChild( temp );            //remove the bookmark div
+        this.style.display = 'none';                    //make the cancel link invisible
+        this.onclick = null;                            //retire the onclick handler
+        return false;
+      };
+  
+      /*
+       * Set initial focus to the first form focusable element.
+       * Try/catch used just to avoid errors in IE 7- which return visibility
+       * 'inherit' when the visibility value is inherited from an ancestor.
+       */
+      try {
+        for ( var i = 0; i < commentForm.elements.length; i++ ) {
+          element = commentForm.elements[i];
+          cssHidden = false;
+  
+          // Modern browsers.
+          if ( 'getComputedStyle' in window ) {
+            style = window.getComputedStyle( element );
+          // IE 8.
+          } else if ( document.documentElement.currentStyle ) {
+          style = element.currentStyle;
+          }
+  
+        /*
+         * For display none, do the same thing jQuery does. For visibility,
+         * check the element computed style since browsers are already doing
+         * the job for us. In fact, the visibility computed style is the actual
+         * computed value and already takes into account the element ancestors.
+         */
+          if ( ( element.offsetWidth <= 0 && element.offsetHeight <= 0 ) || style.visibility === 'hidden' ) {
+            cssHidden = true;
+          }
+  
+          // Skip form elements that are hidden or disabled.
+          if ( 'hidden' === element.type || element.disabled || cssHidden ) {
+            continue;
+          }
+  
+          element.focus();
+          // Stop after the first focusable element.
+          break;
+        }
+  
+      } catch( er ) {}
+  
+      return false;
+    },
+  
+    I: function( id ) {
+      return document.getElementById( id );
+    }
   };
-  xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-  xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
-  xhr.send(formBody);
-});
