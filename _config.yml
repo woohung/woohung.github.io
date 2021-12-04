@@ -47,7 +47,7 @@ params:
   emailhash: 297ff5e47e09fc4ee31c46a6037ca072
   comments: true
   staticman:
-    api: https://netautomation-blog.herokuapp.com/v2/entry/woohung/woohung.github.io/main/comments
+    staticmanUrl: https://netautomation-blog.herokuapp.com/v2/entry/woohung/woohung.github.io/main/comments
     recaptcha:
       enabled: true
       sitekey: '6Lfil3odAAAAAHraZ72yIgCKVTeGjBdAlQj-D2Lm'
