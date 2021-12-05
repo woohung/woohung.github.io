@@ -1,30 +1,11 @@
-<!-- _includes/comment-form.html -->
 <form method="POST" action="{{ site.params.staticman.api }}" class="comment-form">
-  <input
-    name="options[redirect]"
-    type="hidden"
-    value= "{{ page.url | absolute_url }}"
-  />
-  <input name="options[slug]" type="hidden" value="{{ page.slug }}" />
-
-  <textarea
-    class="comment-message"
-    name="fields[message]"
-    placeholder="Comment (markdown accepted)"
-    required
-  ></textarea>
+  <input name="options[redirect]" type="hidden" value="{{ page.url | absolute_url }}">
+  <input name="options[slug]" type="hidden" value="{{ page.slug }}">
+  <input name="fields[parent]" type="hidden" value="{{include.parent}}">
+  
+  <textarea class="comment-message" name="fields[message]" placeholder="Comment (markdown accepted)" required></textarea>
   <div class="comment-bottom">
-    <input
-      class="comment-name"
-      name="fields[name]"
-      type="text"
-      placeholder="Name"
-      required
-    />
-    <div class="g-recaptcha" data-sitekey="{{ site.params.staticman.recaptcha.sitekey }}"></div>
-    <script src='https://www.google.com/recaptcha/api.js'></script>
-
+    <input class="comment-name" name="fields[name]" type="text" placeholder="Name" required>
     <button class="comment-submit" type="submit">SEND</button>
-  </div>
-
+  </div>  
 </form>
