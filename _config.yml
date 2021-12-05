@@ -44,13 +44,14 @@ header_pages:
 
 
 params:
+  env: production
   author: Artem Kovalchuk
   emailhash: 297ff5e47e09fc4ee31c46a6037ca072
   description: Personal blog
 
   comments: true
   staticman:
-    api: https://netautomation-blog.staticman.net/v2/entry/woohung/woohung.github.io/main
+    api: https://aybeorg.herokuapp.com/v2/entry/xbreaker/xbreaker.github.io/main/comments
     recaptcha:
       enabled: true
       sitekey: "6Lfil3odAAAAAHraZ72yIgCKVTeGjBdAlQj-D2Lm"
