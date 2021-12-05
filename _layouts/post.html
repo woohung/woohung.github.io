@@ -33,6 +33,13 @@ layout: default
   <div class="post-content e-content" itemprop="articleBody">
     {{ content }}
   </div>
+  
+  {% if site.data.comments[page.slug] %}
+    <div>
+      <h2>Comments</h2>
+      {% include comment-list.html %}
+    </div>
+  {% endif %}
 
   {% include comments.html %}
   
