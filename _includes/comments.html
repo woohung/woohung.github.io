@@ -2,12 +2,9 @@
   <div>
     <h2>Комментарии ({% assign numbers = site.data.comments[post_slug].size %}{% if numbers < 0 %}0{% else %}{{ numbers | divided_by:1 }}{% endif %}):</h2>
   </div>
-  {% if site.data.comments[page.slug] %}
-  <div>
-    <h2>Comments</h2>
-    {% include comment-list.html %}
-  </div>
-  {% endif %}
+  
+  <h2>Comments</h2>
+  {% include comment-list.html %}
 
   <div>
     <h2>Leave a Comment</h2>
