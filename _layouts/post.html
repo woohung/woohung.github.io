@@ -32,9 +32,9 @@ layout: default
 
   <div class="post-content e-content" itemprop="articleBody">
     {{ content }}
-    {% include comments.html %}
-    {% include new-comments.html %}
-  </div>
 
+  </div>
+  {% include comments.html %}
+  {% include new-comments.html %}
   <a class="u-url" href="{{ page.url | relative_url }}" hidden></a>
 </article>
