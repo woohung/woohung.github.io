@@ -34,13 +34,6 @@ layout: default
     {{ content }}
   </div>
   
-  {% if site.data.comments[page.slug] %}
-    <div>
-      <h2>Comments</h2>
-      {% include comment-list.html %}
-    </div>
-  {% endif %}
-
   {% include comments.html %}
   
   <a class="u-url" href="{{ page.url | relative_url }}" hidden></a>
