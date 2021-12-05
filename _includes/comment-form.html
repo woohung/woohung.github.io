@@ -5,9 +5,9 @@
   
   <textarea class="comment-message" name="fields[message]" placeholder="Comment (markdown accepted)" required></textarea>
   <div class="comment-bottom">
+    <input class="comment-name" name="fields[name]" type="text" placeholder="Name" required>
     <div class="g-recaptcha" data-sitekey="{{ site.params.staticman.recaptcha.sitekey }}"></div>
     <script src='https://www.google.com/recaptcha/api.js'></script>
-    <input class="comment-name" name="fields[name]" type="text" placeholder="Name" required>
     <button class="comment-submit" type="submit">SEND</button>
   </div>
 
