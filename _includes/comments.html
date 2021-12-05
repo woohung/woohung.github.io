@@ -1,6 +1,6 @@
 <!-- _includes/comments.html -->
 <section class="comments">
-  {% if site.data.comments[page.slug] %}
+  {% if page.comments == true %}
   <div>
     <h2>Comments</h2>
     {% include comment-list.html %}
