@@ -21,8 +21,9 @@
       placeholder="Name"
       required
     />
-    <input type="hidden" name="options[reCaptcha][siteKey]" value="{{ site.params.staticman.recaptcha.sitekey }}">
-    <input type="hidden" name="options[reCaptcha][secret]" value="{{ site.params.staticman.recaptcha.secret }}">
+    <div class="g-recaptcha" data-sitekey="{{ site.params.staticman.recaptcha.sitekey }}"></div>
+    <script src='https://www.google.com/recaptcha/api.js'></script>
+
     <button class="comment-submit" type="submit">SEND</button>
   </div>
 
