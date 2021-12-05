@@ -2,18 +2,20 @@
   <input name="options[redirect]" type="hidden" value="{{ 'thanks' | absolute_url }}">
   <input name="options[slug]" type="hidden" value="{{ page.slug }}">
   
-  <input name="fields[parent_id]" type="hidden" value="{{ include.parent_id }}">
+  <input name="fields[parent]" type="hidden" value="{{ include.parent }}">
   
-  <textarea id="message-{{ include.parent_id }}" class="comment-message" name="fields[message]" placeholder="Comment (markdown accepted)" required></textarea>
+  <textarea id="message-{{ include.parent }}" class="comment-message" name="fields[message]" placeholder="Comment (markdown accepted)" required></textarea>
   <div class="comment-bottom">
     <input class="comment-name" name="fields[name]" type="text" placeholder="Name" required>
+    <div class="g-recaptcha" data-sitekey="{{ site.params.staticman.recaptcha.sitekey }}"></div>
+    <script src='https://www.google.com/recaptcha/api.js'></script>
     <button class="comment-submit" type="submit">SEND</button>
   </div>  
 </form>
 
 <script>
   var simplemde = new SimpleMDE({ 
-      element: document.getElementById("message-{{ include.parent_id }}"),
+      element: document.getElementById("message-{{ include.parent }}"),
       forceSync: true,
       spellChecker: false,
       status: false,
