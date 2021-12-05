@@ -1,8 +1,10 @@
 <section class="comments">    
-  <div>
-    <h2>Comments</h2>
-    {% include comment-list.html %}
-  </div>
+  {% if site.params.comments == true %}
+    <div>
+      <h2>Comments</h2>
+      {% include comment-list.html %}
+    </div>
+  {% endif %}
 
   <div class="comment-new">
     <h2>Leave a Comment</h2>
