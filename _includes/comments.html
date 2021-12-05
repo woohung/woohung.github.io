@@ -1,13 +1,24 @@
-<section class="comments">    
-  {% if site.data.comments[page.slug] %}
-  <div>
-    <h2>Comments</h2>
+<section class="comments">
+  <h2>Коментарии ({% assign numbers = site.data.comments[post_slug].size %}{% if numbers < 0 %}0{% else %}{{ numbers | divided_by:1 }}{% endif %}):</h2>
+  {% if site.data.comments[post_slug] %} 
+  {% assign comments = site.data.comments[post_slug] %} 
+  {% if comments != null %} 
+  {% assign comments = site.data.comments[post_slug] | sort %} 
+  {% for commentData in comments %} 
+    {% assign comment = commentData[1] %} 
+    {% assign name = comment.name %} 
+    {% assign date = comment.date %} 
+    {% assign message = comment.message %} 
     {% include comment-list.html %}
-  </div>
+  {% endfor %} 
+  {% endif %} 
+  {% else %}
+    <div class="notice">
+      <h4>Nikt jeszcze nie skomentował.</h4>
+    </div>
   {% endif %}
-
-  <div>
-    <h2>Leave a Comment</h2>
-    {% include comment-form.html %}
-  </div>
+    <div>
+      <h2>Leave a Comment</h2>
+      {% include comment-form.html %}
+    </div>
 </section>
