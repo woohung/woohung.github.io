@@ -1,10 +1,9 @@
 <form method="POST" action="{{ site.staticman_url }}" class="comment-form">
-  <input name="options[redirect]" type="hidden" value="{{ 'thanks' | absolute_url }}">
+  <input name="options[redirect]" type="hidden" value="{{ page.url | absolute_url }}">
   <input name="options[slug]" type="hidden" value="{{ page.slug }}">
+  <input name="fields[parent]" type="hidden" value="{{include.parent}}">
   
-  <input name="fields[parent]" type="hidden" value="{{ include.parent }}">
-  
-  <textarea id="message-{{ include.parent }}" class="comment-message" name="fields[message]" placeholder="Comment (markdown accepted)" required></textarea>
+  <textarea class="comment-message" name="fields[message]" placeholder="Comment (markdown accepted)" required></textarea>
   <div class="comment-bottom">
     <input class="comment-name" name="fields[name]" type="text" placeholder="Name" required>
     <div class="g-recaptcha" data-sitekey="{{ site.params.staticman.recaptcha.sitekey }}"></div>
