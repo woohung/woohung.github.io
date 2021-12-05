@@ -1,20 +1,13 @@
-<section class="comments" id="comment-section">
-  <hr>
+<section class="comments">
   {% if site.data.comments[page.slug] %}
-  <!-- Existing comments -->
-  <div class="comments__existing">
+  <div>
     <h2>Comments</h2>
-    {% assign comments = site.data.comments[page.slug] | where_exp: "item", "item.parent_id == ''" %}
-    {% assign comments_by_date = comments | sort: 'date' | reverse %}
-    <!-- List main comments in reverse date order, newest first. List replies in date order, oldest first. -->
-    {% for comment in comments_by_date %}
-    {%- assign name            = comment.name %}
-    {%- assign date            = comment.date %}
-    {%- assign message         = comment.message %}
-    {%- assign uid             = comment._id %}
-    {% include comment.html is_reply=false uid=uid replying_to=0 email=email name=name url=url date=date message=message uid=uid %}
-    {% endfor %}
+    {% include comment-list.html %}
   </div>
   {% endif %}
 
+  <div>
+    <h2>Leave a Comment</h2>
+    {% include comment-form.html %}
+  </div>
 </section>
