@@ -19,10 +19,8 @@
     required
   ></textarea>
     
-  <div 
-    class="g-recaptcha" 
-    data-sitekey="6Ld-69ccAAAAAHWq5Fo1s6xpsghd-rp5zggFjRLO"
-  ></div>
+  <div class="g-recaptcha" data-sitekey="{{ site.params.staticman.recaptcha.sitekey }}"></div>
+  <script src='https://www.google.com/recaptcha/api.js'></script>
 
   <button class="comment-submit" >
     SEND
