@@ -1,10 +1,11 @@
 <section class="comments">
-  {% if site.data.comments[page.slug] %}
   <div>
     <h2>Komentarze ({% assign numbers = site.data.comments[post_slug].size %}{% if numbers < 0 %}0{% else %}{{ numbers | divided_by:1 }}{% endif %}):</h2>
-    {% include comment-list.html %}
   </div>
-  {% endif %}
+
+{% if site.data.comments[page.slug] %}  
+  {% include comment-list.html %}
+{% endif %}
 
   <div>
     <h2>Leave a Comment</h2>
