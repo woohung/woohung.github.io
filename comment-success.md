@@ -1,11 +1,5 @@
 ---
-layout: default
-list_title: Read Our Latest Posts
+layout: home
 title: ''
 ---
-<div id="comment-submitted" class="dialog">
-  <h3>Thank you</h3>
-    <p>Your comment has been submitted and will be published once it has been approved.</p>
-    <p><a href="https://github.com/woohung/woohung.github.io/pulls">Click here</a> to see the pull request you generated.</p>
-    <p><a href="#" class="btn">OK</a></p>
-</div>
+{% include comment-success.html %}
