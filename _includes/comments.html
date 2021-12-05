@@ -1,14 +1,14 @@
 <!-- _includes/comments.html -->
 <section class="comments">
-  {% if page.comments == true %}
-  <div>
-    <h2>Comments</h2>
-    {% include comment-list.html %}
-  </div>
+  {% if site.data.comments[page.slug] %}
+    <div>
+      <h2>Комментарии</h2>
+      {% include comment-list.html %}
+    </div>
   {% endif %}
 
   <div>
-    <h2>Комментарии</h2>
+    <h2>Оставь комментарий</h2>
     {% include comment-form.html %}
   </div>
 </section>
