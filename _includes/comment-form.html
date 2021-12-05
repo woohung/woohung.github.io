@@ -1,6 +1,10 @@
 <!-- _includes/comment-form.html -->
 <form method="POST" action="{{ site.params.staticman.api }}" class="comment-form">
-  <input type="hidden" name="options[redirect]" value="{{ .Permalink }}#comment-submitted">
+  <input
+    name="options[redirect]"
+    type="hidden"
+    value="{{ include.thanks.html }}"
+  />
   <input name="options[slug]" type="hidden" value="{{ page.slug }}" />
 
   <textarea
@@ -22,8 +26,5 @@
 
     <button class="comment-submit" type="submit">SEND</button>
   </div>
-<div id="comment-submitted" class="dialog">
-<h3>Thank you</h3>
-  <p>Your comment has been submitted and will be published once it has been approved.</p>
-  <p><a href="https://github.com/eduardoboucas/hugo-plus-staticman/pulls">Click here</a> to see the pull request you generated.</p>
+
 </form>
