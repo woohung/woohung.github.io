@@ -1,4 +1,4 @@
-({% assign numbers = site.data.comments[post_slug].size %}{% if numbers < 0 %}0{% else %}{{ numbers | divided_by:1 }}{% endif %})
+{% assign comments = site.data.comments[page.slug] | where_exp: "item", "true" %}
 {% assign sorted_comments = comments | sort: 'date' %}
 {% for comment in sorted_comments %}
 <div class="comment">
