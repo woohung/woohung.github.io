@@ -1,3 +1,8 @@
+---
+layout: default
+list_title: Read Our Latest Posts
+title: ''
+---
 <div id="comment-submitted" class="dialog">
   <h3>Thank you</h3>
     <p>Your comment has been submitted and will be published once it has been approved.</p>

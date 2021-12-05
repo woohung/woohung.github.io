@@ -1,9 +1,9 @@
 <form method="POST" action="{{ site.params.staticman.api }}" class="comment-form">
-  <input name="options[redirect]" type="hidden" value="{{ https://woohung.github.io | absolute_url }}">
+  <input name="options[redirect]" type="hidden" value="{{ 'thanks' | absolute_url }}">
   <input name="options[slug]" type="hidden" value="{{ page.slug }}">
   <input name="fields[parent]" type="hidden" value="{{include.parent}}">
   
-  <textarea class="comment-message" name="fields[message]" placeholder="Comment (markdown accepted)" required></textarea>
+  <textarea id="message-{{ include.parent_id }}" class="comment-message" name="fields[message]" placeholder="Comment (markdown accepted)" required></textarea>
   <div class="comment-bottom">
     <input class="comment-name" name="fields[name]" type="text" placeholder="Name" required>
     <div class="g-recaptcha" data-sitekey="{{ site.params.staticman.recaptcha.sitekey }}"></div>
@@ -12,3 +12,13 @@
   </div>
 
 </form>
+
+<script>
+  var simplemde = new SimpleMDE({ 
+      element: document.getElementById("message-{{ include.parent_id }}"),
+      forceSync: true,
+      spellChecker: false,
+      status: false,
+      placeholder: 'Comment (markdown supported)'
+  });
+</script>
