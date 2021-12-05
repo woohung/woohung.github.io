@@ -3,7 +3,7 @@
   <input
     name="options[redirect]"
     type="hidden"
-    value="{{ include.thanks.html }}"
+    value= "{{ page.url | absolute_url }}"
   />
   <input name="options[slug]" type="hidden" value="{{ page.slug }}" />
 
