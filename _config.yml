@@ -51,7 +51,7 @@ params:
 
   comments: true
   staticman:
-    api: https://netautomation-blog.herokuapp.com/v3/entry/woohung/woohung.github.io/main/comments
+    api: https://netautomation-blog.herokuapp.com/v2/entry/woohung/woohung.github.io/main/comments
     recaptcha:
       enabled: true
       sitekey: "6Lfil3odAAAAAHraZ72yIgCKVTeGjBdAlQj-D2Lm"
