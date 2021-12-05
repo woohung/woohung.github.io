@@ -42,9 +42,10 @@ header_pages:
   - archive.md
   - about.md
 
-emailhash: 297ff5e47e09fc4ee31c46a6037ca072
+
 params:
   comments: true
+  emailhash: 297ff5e47e09fc4ee31c46a6037ca072
     staticman:
       api: https://netautomation-blog.herokuapp.com/v2/entry/woohung/woohung.github.io/main/comments
       recaptcha:
