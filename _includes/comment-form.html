@@ -1,22 +1,40 @@
 <form method="POST" action="{{ site.params.staticman.api }}" class="comment-form">
   <input name="options[redirect]" type="hidden" value="{{ 'comment-success' | absolute_url }}">
-  <input name="options[slug]" type="hidden" value="{{ page.slug }}" >
+  <input name="options[slug]" type="hidden" value="{{ page.slug }}" />
+  <input name="fields[parent_id]" type="hidden" value="{{ include.parent_id }}" />
   
-  <textarea class="comment-message" name="fields[message]" placeholder="Comment (markdown accepted)" required></textarea>
-  <div class="comment-bottom">
-    <input class="comment-name" name="fields[name]" type="text" placeholder="Name" required>
-    <div class="g-recaptcha" data-sitekey="{{ site.params.staticman.recaptcha.sitekey }}"></div>
-    <script src='https://www.google.com/recaptcha/api.js'></script>
-    <button class="comment-submit" type="submit">SEND</button>
-  </div>  
+  <input
+      class="comment-name"
+      name="fields[name]"
+      type="text"
+      placeholder="Name"
+      required
+    />
+
+  <textarea
+    id="message-{{ include.parent_id }}"
+    class="comment-message"
+    name="fields[message]"
+    placeholder="Comment (markdown accepted)"
+    required
+  ></textarea>
+    
+  <div 
+    class="g-recaptcha" 
+    data-sitekey="6Ld-69ccAAAAAHWq5Fo1s6xpsghd-rp5zggFjRLO"
+  ></div>
+
+  <button class="comment-submit" >
+    SEND
+  </button>
 </form>
 
 <script>
-  var simplemde = new SimpleMDE({ 
-      element: document.getElementById("message-{{ include.parent }}"),
-      forceSync: true,
-      spellChecker: false,
-      status: false,
-      placeholder: 'Comment (markdown supported)'
+  var simplemde = new SimpleMDE({
+    element: document.getElementById("message-{{ include.parent_id }}"),
+    forceSync: true,
+    spellChecker: false,
+    status: false,
+    placeholder: "Comment (markdown supported)",
   });
 </script>

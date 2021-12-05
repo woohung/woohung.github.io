@@ -49,7 +49,6 @@ params:
   emailhash: 297ff5e47e09fc4ee31c46a6037ca072
   description: Personal blog
 
-  comments: true
   staticman:
     api: https://netautomation-blog.herokuapp.com/v2/entry/woohung/woohung.github.io/main/comments
     recaptcha:
