@@ -1,5 +1,5 @@
 <!-- _includes/comment-list.html -->
-{% assign comments = site.data.comments[page.slug] | where_exp: "item", "true" %} 
+{% assign comments = data.comments[page.slug] | where_exp: "item", "true" %} 
 {% assign sorted_comments = comments | sort: 'date' %} 
 {% for comment in sorted_comments %}
 <div class="comment">
