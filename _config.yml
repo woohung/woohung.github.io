@@ -44,7 +44,6 @@ header_pages:
 
 
 params:
-  env: production
   author: Artem Kovalchuk
   emailhash: 297ff5e47e09fc4ee31c46a6037ca072
   description: Personal blog
