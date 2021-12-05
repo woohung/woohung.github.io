@@ -1,3 +1,4 @@
+<!-- _includes/comment-list.html -->
 {% assign parent_id = include.parent_id | default: '' %}
 {% assign comments = site.data.comments[page.slug] | where_exp: "item", "item.parent_id == parent_id" %}
 {% assign sorted_comments = comments | sort: 'date' %}
