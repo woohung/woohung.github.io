@@ -44,9 +44,9 @@ header_pages:
   - about.md
 
 
+# disqus:
+#    shortname: my_disqus_shortname
 
-staticman_url: https://netautomation-blog.herokuapp.com/v2/entry/woohung/woohung.github.io/main/comments
-    
 google_analytics: G-CN4DKMSDY2
 
 
