@@ -34,6 +34,8 @@ plugins:
   - jekyll-seo-tag
   - jekyll-target-blank
   - jekyll-sitemap
+  - jekyll-remote-theme
+
 
 show_excerpts: true
 
@@ -43,6 +45,7 @@ header_pages:
   - archive.md
   - about.md
 
+remote_theme: jekyll/minima
 
 # disqus:
 #    shortname: my_disqus_shortname
