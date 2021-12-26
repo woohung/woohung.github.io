@@ -252,3 +252,12 @@ table {
     border: 1px solid $grey-color-light;
   }
 }
+
+.search input {
+  height: 30px;
+  width: 60%;
+  padding-left: 10px;
+  border: 1px solid #D9D9D9;
+  border-radius: 10px;
+  font-size: 16px;
+}
