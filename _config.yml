@@ -34,9 +34,7 @@ plugins:
   - jekyll-seo-tag
   - jekyll-target-blank
   - jekyll-sitemap
-  - jekyll-remote-theme
 
-remote_theme: songzivong/dark-minima
 
 show_excerpts: true
 
