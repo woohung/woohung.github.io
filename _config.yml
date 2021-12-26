@@ -35,6 +35,8 @@ plugins:
   - jekyll-target-blank
   - jekyll-sitemap
 
+minima:
+  skin: dark
 
 show_excerpts: true
 
