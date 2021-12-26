@@ -19,7 +19,7 @@ layout: default
         {% unless forloop.last %}&nbsp;{% endunless %}
         {% endfor %}
       </div>
-      {% include reading-time.html %}
+      <span>{% include reading-time.html %}</span>
       <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
         {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
         {{ page.date | date: date_format }}
@@ -35,7 +35,7 @@ layout: default
           <a href="/tag/{{ tag_name }}"><code class="highligher-rouge"><nobr>{{ tag_name }}</nobr></code>&nbsp;</a>
         {% endfor %}
       ]</span>
-      
+
   </header>
 
   <div class="post-content e-content" itemprop="articleBody">
