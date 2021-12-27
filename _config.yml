@@ -41,7 +41,7 @@ show_excerpts: true
 header_pages:
   - certificates.md
   - categories.md
-  - archive.md
+  - tags.md
   - about.md
 
 
