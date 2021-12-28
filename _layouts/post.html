@@ -6,7 +6,9 @@ layout: default
   <header class="post-header">
     <h1 class="post-title p-name" itemprop="name headline">{{ page.title | escape }}</h1>
     <p class="post-meta">
-
+      <span class="views">
+        <img src="https://visitor-badge.glitch.me/badge?page_id=woohung.github.io" alt="visitor badge"/>
+      </span>
       <div class="post-categories">
         {% if post %}
           {% assign categories = post.categories %}
@@ -20,9 +22,6 @@ layout: default
         {% endfor %}
       </div>
       <span>{% include reading-time.html %}</span>
-      <span class="views">
-          <img src="https://visitor-badge.glitch.me/badge?page_id=woohung.github.io" alt="visitor badge"/>
-      </span>
       <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
         {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
         {{ page.date | date: date_format }}
