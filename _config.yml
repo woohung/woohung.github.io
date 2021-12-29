@@ -39,7 +39,7 @@ plugins:
 show_excerpts: true
 
 header_pages:
-  - cert.md
+  - certifications.md
   - categories.md
   - tags.md
   - about.md
