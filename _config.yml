@@ -40,7 +40,7 @@ show_excerpts: true
 
 header_pages:
   - certificates.md
-  - categories.md
+  - cv.md
   - tags.md
   - about.md
 
