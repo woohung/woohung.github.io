@@ -39,8 +39,8 @@ plugins:
 show_excerpts: true
 
 header_pages:
-  - certificates.md
-  - cv.md
+  - cert.md
+  - categories.md
   - tags.md
   - about.md
 
