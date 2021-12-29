@@ -12,9 +12,5 @@ permalink: /about/
 Телеграм канал - https://t.me/netautomation.  
 Твиттер/Github внизу страницы.  
 
-### Where:
-Пишу статьи на [Habr](https://habr.com/ru/users/woo_hung/).    
-
-
 >Блог создан на базе [Github Pages](https://pages.github.com) и собран на [jekyll](jekyll-organization).  
 Исходный код блога расположен на [GitHub](https://github.com/woohung/woohung.github.io).
