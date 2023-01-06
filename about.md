@@ -14,5 +14,5 @@ permalink: /about/
 [Github](https://github.com/woohung)  
 [LinkedIn](https://www.linkedin.com/in/artem-kovalchuk-01a2051a3/)  
 
->Блог создан на базе [Github Pages](https://pages.github.com) и собран на [jekyll](jekyll-organization).  
+>Блог создан на базе [Github Pages](https://pages.github.com) и собран на [jekyll](https://jekyllrb.com).  
 Исходный код блога расположен на [GitHub](https://github.com/woohung/woohung.github.io).
