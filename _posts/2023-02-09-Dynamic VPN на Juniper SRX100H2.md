@@ -306,7 +306,7 @@ vpn dyn-vpn {
 - aes-256-cbs
 - hmac-sha1-96
 
-Т.е нам доступно только повышение до AES-256-cbs, изменение остаьных параметров пиводит к неуспешному подключению. Поправим конфиг в соответствии с данными:  
+Т.е нам доступно только повышение до AES-256-cbs, изменение остальных параметров приводит к неуспешному подключению. Т.е есть возможность поставить более стойкие алгоритмы, но dynamic vpn имеет достаточно серьезные ограничения. Поправим конфиг в соответствии с данными:  
 ```
 set security ike proposals ike-proposal encryption-algorithm aes-256-cbc
 set security ipsec proposals ipsec-proposal encryption-algorithm aes-256-cbc
@@ -319,7 +319,7 @@ commit
 
 ![ipsec-256](/assets/images/SRX100/ipsec_256.png)  
 
-Ближайшая замена, рекомендуемая Juniper - [SRX300](https://apps.juniper.net/home/srx300/overview).   
+Ближайшая замена, рекомендуемая Juniper - [SRX300](https://apps.juniper.net/home/srx300/overview). На нем мы можем поднять уже Juniper Secure Connect, который предлагает гораздо больше опций. [Документ](https://www.juniper.net/documentation/us/en/software/secure-connect/secure-connect-administrator-guide/topics/topic-map/overview.html#id-difference-in-features-supported-for-juniper-secure-connect-client-and-dynamic-vpn), где можно почитать про основные различия Dynamic VPN и Secure Connect.
 
 У меня не было цели разбирать возможности железки целиком или настройку Dynamic VPN целиком. Моя конфигурация была стандартной. Оставлю пару ссылок по теме Dynamic VPN на SRX.  
 
