@@ -318,7 +318,7 @@ commit
 
 Ближайшая замена, рекомендуемая Juniper - [SRX300](https://apps.juniper.net/home/srx300/overview).   
 
-У меня было цели разбирать возможности железки целиком или настройку Dynamic VPN целиком. Моя конфигурация была стандартной. Оставлю пару ссылок по теме Dynamic VPN на SRX.  
+У меня не было цели разбирать возможности железки целиком или настройку Dynamic VPN целиком. Моя конфигурация была стандартной. Оставлю пару ссылок по теме Dynamic VPN на SRX.  
 
 Список источников: 
 - [Описание proposal-set (Security IKE)](https://www.juniper.net/documentation/us/en/software/junos/vpn-ipsec/topics/ref/statement/security-edit-proposal-set-ike.html)
