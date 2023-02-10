@@ -208,7 +208,7 @@ gateway dyn-vpn-local-gw {
 		connections-limit 10;
 		ike-user-type group-ike-id;
 	}
-	external-interface fe-0/0/0.0;    <- тут
+	external-interface fe-0/0/0;    <- тут
 	xauth access-profile dyn-vpn-access-profile;
 }
 ```
