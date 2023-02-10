@@ -249,7 +249,7 @@ Sec-level compatible: esp, no pfs (if not configured) or groupx (if configured),
 Sec-level standard: esp, g2 (if not configured) or groupx (if configured), aes128, sha1
 ```
 
-А вот так выглядит кусок конфига с custom proposals, вместо proposal-set:  
+Чтобы манипулировать алгоритмами в proposals, будем использовать custom proposals, вместо рекомендованных `proposal-set standard`. Вот так выглядит кусок конфига с custom proposals для ike и ipsec:  
 ```
 ### IKE ###
 proposal ike-proposal {
