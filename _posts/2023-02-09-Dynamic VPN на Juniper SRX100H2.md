@@ -321,7 +321,7 @@ commit
 
 Ближайшая замена, рекомендуемая Juniper - [SRX300](https://apps.juniper.net/home/srx300/overview). На нем мы можем поднять уже Juniper Secure Connect, который предлагает гораздо больше опций. [Документ](https://www.juniper.net/documentation/us/en/software/secure-connect/secure-connect-administrator-guide/topics/topic-map/overview.html#id-difference-in-features-supported-for-juniper-secure-connect-client-and-dynamic-vpn), где можно почитать про основные различия Dynamic VPN и Secure Connect.
 
-У меня не было цели разбирать возможности железки целиком или настройку Dynamic VPN целиком. Моя конфигурация была стандартной. Оставлю пару ссылок по теме Dynamic VPN на SRX.  
+У меня не было цели разбирать возможности железки целиком или настройку Dynamic VPN целиком. Моя конфигурация была стандартной. Оставлю пару ссылок по теме Dynamic VPN на SRX. Если я где-либо ошибся, не стесняйтесь поправлять в комментариях.  
 
 Список источников: 
 - [Описание proposal-set (Security IKE)](https://www.juniper.net/documentation/us/en/software/junos/vpn-ipsec/topics/ref/statement/security-edit-proposal-set-ike.html)
