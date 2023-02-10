@@ -71,7 +71,7 @@ root@srx100h2# load merge terminal
 Ранее я уже возился с воскрешением ASA5505, поэтому мы сразу попробуем обновить софт.  
 Для начала нужно определиться, какой софт подходит. Для этого [смотрим](https://supportportal.juniper.net/s/article/Junos-Software-Versions-Suggested-Releases-to-Consider-and-Evaluate?language=en_US), какой последний релиз на SRX100.  
 
-Видим, нужная версия: Junos 12.3X48-D105. Раздобыть прошивки, задача не хитрая, конкретно для SRX100H2, я закинул на [ЯД](https://disk.yandex.ru/d/P6nZwqq4GFeBwA), либо можно поглядеть [тут](https://archive.org/download/junos-srxsme).  
+Видим, нужная нам версия: `Junos 12.3X48-D105`. Раздобыть прошивки, задача не хитрая, конкретно для SRX100H2, я закинул на [ЯД](https://disk.yandex.ru/d/P6nZwqq4GFeBwA), либо можно поглядеть [тут](https://archive.org/download/junos-srxsme).  
 
 При попытке накатить софт, доходим до того, что просто так прыгнуть на последнюю версию не выйдет. Выхватываем ошибку формата `WARNING: Package 12.3X48-Dxx is not compatible with this hardware`, [тут  подробнее](https://community.juniper.net/communities/community-home/digestviewer/viewthread?MID=67555).  
 
