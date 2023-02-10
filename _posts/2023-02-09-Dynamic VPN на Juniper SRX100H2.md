@@ -313,7 +313,7 @@ set security ipsec proposals ipsec-proposal encryption-algorithm aes-256-cbc
 commit
 ```
 
-Наблюдаем aes-256-cbs, это максимум, на что способен SRX100H2.  
+Наблюдаем aes-256-cbs, это максимум, на что способен SRX100H2 и Dynamic VPN.  
 
 ![ike-256](/assets/images/SRX100/ike_256.png)  
 
