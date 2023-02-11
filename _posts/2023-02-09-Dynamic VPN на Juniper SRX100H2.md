@@ -53,7 +53,12 @@ root@srx100h2#    <- Configuration mode
 Вроде все, поехали разбираться.  
 
 ## Заливаем конфиг
-Предварительно ознакомившись с конфигом в текстовом редакторе, закинем его на устройство. В Junos конфиг записывается в формате `json`, если не знакомы, [документ](https://higherlogicdownload.s3.amazonaws.com/JUNIPER/MigratedAttachments/BD2B2715-FA41-4B55-93C4-B6F775D18EE0-2-JSON-Whitepaper.pdf) с примерами.  
+Предварительно ознакомившись с конфигом в текстовом редакторе, закинем его на устройство.  
+В Junos конфиг записывается в формате `json`, если не знакомы, [документ](https://higherlogicdownload.s3.amazonaws.com/JUNIPER/MigratedAttachments/BD2B2715-FA41-4B55-93C4-B6F775D18EE0-2-JSON-Whitepaper.pdf) с примерами.  
+
+> Команда (в режиме `#`) `show display set` - чтобы Cisco глазки не плакали и можно было copy/paste конфигурации через set сделать и не париться с редактированием через терминал.  
+> *За уточнение спасибо [@vassiliy_borulko](https://t.me/vassiliy_borulko)*
+
 Мы можем скопировать конфиг прямо в терминал, используя команду: (не построчно, а весь файл целиком) `load merge terminal` Выполняется из режима `#`.  
 Кроме необходимого нам `merge` у нее есть несколько опций, о которых, в том числе, можно почитать [тут](https://www.juniper.net/documentation/us/en/software/junos/cli/topics/topic-map/junos-config-files-loading.html).  
 
