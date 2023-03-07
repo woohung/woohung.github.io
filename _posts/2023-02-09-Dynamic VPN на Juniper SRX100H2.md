@@ -3,7 +3,7 @@ layout: post
 title: "Воскрешаем Dynamic VPN на Juniper SRX100H2"
 date: '2023/02/09|15:00'
 categories: [Work routine]
-tags: [Некромантия]
+tags: [Juniper]
 published: true
 author: Artem Kovalchuk
 ---
