@@ -19,14 +19,14 @@ author: Artem Kovalchuk
 
 Несколько заметок я уже успел опубликовать и четкой структуры среди, конечно же, нет:
 - [Неизученная автоматизация](https://woohung.github.io/automation/2022/06/15/%D0%9D%D0%B5%D0%B8%D0%B7%D1%83%D1%87%D0%B5%D0%BD%D0%BD%D0%B0%D1%8F-%D0%B0%D0%B2%D1%82%D0%BE%D0%BC%D0%B0%D1%82%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D1%8F.html)
-- [Перевод|Network Automation 101](https://woohung.github.io/automation/2022/06/28/Automation-101.html)
+- [Network Automation 101](https://woohung.github.io/automation/2022/06/28/Automation-101.html)
 
 Статью с переводом (Network Automation 101) считаю основной т.к после ее прочтения складывается достаточно ясный набросок, что сейчас есть в мире автоматизации. Она от 2020 года и уже, однозначно, не исчерпывающая. Если вы обладаете опытом и знаете, что стоило бы добавить, вы можете помочь автору сделать ее лучше!  
 
 Статья опубликована [в блоге](https://dteslya.engineer/network-automation-101/) и выложена на [github](https://github.com/dteslya/dteslya-engineer/tree/main/docs/network-automation-101). 
 
 Из идеи о публикации заметок по курсу Наташи Самойленко, Python для сетевых инженеров я успел довести до ума только самую первую. Планирую продолжить т.к все еще делаю задания (уже добил 18 раздел!):
-- [Pyneng|Заметки по заданиям на типы данных](https://woohung.github.io/automation/2022/06/21/Pyneng-%D0%B7%D0%B0%D0%BC%D0%B5%D1%82%D0%BA%D0%B8-%D0%BF%D0%BE-%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D1%8F%D0%BC-%D0%BD%D0%B0-%D1%82%D0%B8%D0%BF%D1%8B-%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D1%85.html)
+- [Заметки по заданиям на типы данных](https://woohung.github.io/automation/2022/06/21/Pyneng-%D0%B7%D0%B0%D0%BC%D0%B5%D1%82%D0%BA%D0%B8-%D0%BF%D0%BE-%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D1%8F%D0%BC-%D0%BD%D0%B0-%D1%82%D0%B8%D0%BF%D1%8B-%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D1%85.html)
 
 Это все, что есть. В загашнике еще достаточно черновиков и идей. В этот раз мы базово разберемся с API, как с этим работать и как применять, на примере API Fortigate.  
 
