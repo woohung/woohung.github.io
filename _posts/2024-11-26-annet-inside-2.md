@@ -298,7 +298,7 @@ annet.annet.main()
 
 То же самое можно сделать с помощью хоткея `gd`. В этом случае меня сразу кинет в файл, где присутствует данная функция:
 
-![go to definition](/assets/images/Annet/gd)
+![go to definition](/assets/images/Annet/gd.png)
 
 Это условная стартовая точка программы, в ней принимаются аргументы `show/gen/diff/patch/deploy/file-diff/file-patch/context` и далее дергается та или иная логика, прописанная для каждого из аругментов. Сначала обратимся к странице в доке, которую я сознательно пропустил в самом начале - [CLI Usage](https://annetutil.github.io/annet/main/usage/cli.html#).
 
