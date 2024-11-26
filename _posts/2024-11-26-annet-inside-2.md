@@ -753,6 +753,46 @@ def get_generators(store: Storage) -> List[BaseGenerator]:
     ]
 ```
 
+Генератор у меня с `custom_field` поэтому пришлось поправить и это...:
+
+```python
+@ annet/storage.py:107 @ class Interface(Protocol):
+    def add_addr(self, address_mask: str, vrf: Optional[str]) -> None:
+        raise NotImplementedError
+
+    # @property
+    @abc.abstractmethod # +
+    def custom_fields(self) -> Dict[str, Any]: # +
+        """Custom fields from NetBox.""" # +
+        raise NotImplementedError # +
+
+@ annet/adapters/netbox/common/models.py:136 @ class Interface(Entity):
+    lag: Entity | None = None
+    lag_min_links: int | None = None
+
+    custom_fields: Dict[str, Any] = field(default_factory=dict) # +
+
+    def add_addr(self, address_mask: str, vrf: str | None) -> None:
+        addr = ip_interface(address_mask)
+        if vrf is None:
+```
+А еще потом тесты сломались...пришлось докинуть `custom_field` в FakeInterface, который наследуется от Interface:
+
+```python
+@ tests/annet/test_mesh/fakes.py:2 @
+from typing import Any, Optional, Sequence
+from typing import Any, Dict, Optional, Sequence # +
+import abc # +
+
+from annet.mesh.executor import Device
+from annet.storage import Storage, Interface
+@ tests/annet/test_mesh/fakes.py:22 @ class FakeInterface(Interface):
+    def add_addr(self, address_mask: str, vrf: Optional[str]) -> None:
+        self.addrs.append((address_mask, vrf))
+
+    def custom_fields(self): # +
+        pass # +
+```
 А это фикс бага в `file-diff/file-patch`:
 
 ```python
