@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Дизайн на коленке №1 - Резервирование L2 каналов по BGP, между M-Lag CE Huawei и Eltex ESR кластером"
+title: "Дизайн на коленке: Резервирование L2 каналов по BGP, между M-Lag CE Huawei и Eltex ESR кластером"
 date: '2025/10/04|09:00'
 categories: [Routine]
 tags: [Дизайн]
